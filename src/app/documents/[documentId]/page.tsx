@@ -1,4 +1,5 @@
 import { Editor } from "./editor"
+import Toolbar from "./toolbar";
 
 
 
@@ -12,7 +13,8 @@ interface DocumentIdPageProps {
 const DocumentIdPage = async ({ params }: DocumentIdPageProps) => {
     const { documentId } = await params;
     return (
-        <div>
+        <div className="min-h-screen bg-[#fafbfd]">
+            <Toolbar/>
             <Editor />
         </div>
     );
