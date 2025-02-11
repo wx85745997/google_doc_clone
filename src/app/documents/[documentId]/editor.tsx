@@ -13,6 +13,8 @@ import { useEditorStore } from "@/store/use-editor-store"
 import { Underline } from "@tiptap/extension-underline"
 import FontFamily from '@tiptap/extension-font-family'
 import TextStyle from '@tiptap/extension-text-style'
+import { Color } from '@tiptap/extension-color'
+import Highlight from '@tiptap/extension-highlight'
 
 
 
@@ -51,7 +53,22 @@ const Editor = () => {
         class: "focus:outline-none print:border-0 bg-white border border-[#c7c7c7] flex flex-col min-h-[1054px] w-[816px] pt-10 pr-14 pb-10 cursor-text"
       }
     },
-    extensions: [StarterKit, TaskItem.configure({ nested: true }), TaskList, Table, TableCell, TableHeader, TableRow, Image, ImageResize, Underline, FontFamily, TextStyle],
+    extensions: [
+      StarterKit,
+      TaskItem.configure({ nested: true }),
+      TaskList,
+      Table,
+      TableCell,
+      TableHeader,
+      TableRow,
+      Image,
+      ImageResize,
+      Underline,
+      FontFamily,
+      TextStyle,
+      Color,
+      Highlight.configure({ multicolor: true })
+    ],
     content: `
         <table>
           <tbody>
