@@ -14,6 +14,7 @@ import { Underline } from "@tiptap/extension-underline"
 import FontFamily from '@tiptap/extension-font-family'
 import TextStyle from '@tiptap/extension-text-style'
 import { Color } from '@tiptap/extension-color'
+import Link from "@tiptap/extension-link"
 import Highlight from '@tiptap/extension-highlight'
 
 
@@ -53,8 +54,9 @@ const Editor = () => {
         class: "focus:outline-none print:border-0 bg-white border border-[#c7c7c7] flex flex-col min-h-[1054px] w-[816px] pt-10 pr-14 pb-10 cursor-text"
       }
     },
-    extensions: [
+    extensions: [    
       StarterKit,
+      Link.configure({ openOnClick: false, autolink: true, defaultProtocol: "https" }),
       TaskItem.configure({ nested: true }),
       TaskList,
       Table,
